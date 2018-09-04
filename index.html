@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="./script.js"></script>
+    <script>
+        window.onload = function () {
+            document.getElementById('send').addEventListener('click', function (event) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'http://localhost:3000/photo');
+                xhr.send();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        var items = JSON.parse(xhr.responseText);
+                        console.log(items);
+                    }
+                    event.preventDefault();
+                };
+            })
+        };
+    </script>
 </head>
 <body>
-
+<div class="photo-gallery" id="photo-gallery">
+    <input type="button" id="send" value="send">
+</div>
 </body>
 </html>
