@@ -27,27 +27,32 @@
                     if (xhr.readyState === XMLHttpRequest.DONE) {
                         var items = JSON.parse(xhr.responseText);
                         items = items.map(function (item) {
-                            var newMenuSI = [];
-                            for (var i = 0; i < item.subItem.length; i++) {
-                                newMenuSI.push(new MenuSubItem(
-                                    item.subItem[i].href,
-                                    item.subItem[i].label,
-                                    item.subItem[i].id,
-                                    item.subItem[i].className
-                                ))
-                            }
-                            console.log(newMenuSI);
-
-                            return new MenuItem(item.href, item.label, item.id, newMenuSI);
+                            this.item = item;
+                            return new GalleryItem(item.id, item.src, item.srcBig, item.className);
                         });
 
                         var menu2 = new Menu('menu2', 'menu2', items);
                         document.body.appendChild(menu2.render());
+
+                        document.getElementById('1').addEventListener('mouseover', function (event) {
+                            function createG() {
+                                if (event.target) {
+                                    return new GalleryItem(item.id, item.srcBig, item.src, item.className);
+                                }
+                            }
+
+                            createG();
+                            var menu2 = new Menu('menu2', 'menu2', items);
+                            document.body.appendChild(menu2.render());
+                        })
                     }
                 };
-                event.preventDefault();
             });
-        };
+            event.preventDefault();
+        }
+
+
+
 
     </script>
 </head>

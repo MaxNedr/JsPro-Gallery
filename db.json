@@ -2,55 +2,33 @@
   "items": [
     {
       "id": 1,
-      "label": "Home",
-      "href": "/",
-      "subItem": [" ",
-        {
-          "id": 11,
-          "className": "subMenu-item",
-          "href": "/",
-          "label": "Home1"
-        },
-        {
-          "id": 12,
-          "className": "subMenu-item",
-          "href": "/",
-          "label": "Home2"
-        },
-        {
-          "id": 13,
-          "className": "subMenu-item",
-          "href": "/",
-          "label": "Home3"
-        }
-      ]
+      "className": "image",
+      "src": "img/Layer_44_mini.png",
+      "srcBig": "img/Layer_44.png"
     },
     {
       "id": 2,
-      "label": "News",
-      "href": "/news",
-      "subItem": [{
-        "id": 21,
-        "className": "subMenu-item",
-        "href": "/",
-        "label": "Home2"
-      },{
-        "id": 22,
-        "className": "subMenu-item",
-        "href": "/",
-        "label": "Home3"
-      }," "," "]
+      "className": "image",
+      "src": "img/Layer_45_mini.png",
+      "srcBig": "img/Layer_45.png"
     },
     {
       "id": 3,
-      "label": "Blog",
-      "href": "/Blog",
-      "subItem": [{
-        "id": 31,
-        "className": "subMenu-item",
-        "href": "/",
-        "label": "Home3"
-      }," "," "," "]
+      "className": "image",
+      "src": "img/Layer_46_mini.png",
+      "srcBig": "img/Layer_46.png"
+    },
+    {
+      "id": 4,
+      "className": "image",
+      "src": "img/Layer_47_mini.png",
+      "srcBig": "img/Layer_47.png"
+    },
+    {
+      "id": 5,
+      "className": "image",
+      "src": "img/Layer_48_mini.png",
+      "srcBig": "img/Layer_48.png"
     }
   ]
 }

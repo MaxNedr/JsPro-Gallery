@@ -1,6 +1,6 @@
 "use strict";
 
-/*2. Создать меню, соответствующее меню интернет-магазина (личный кабинет, каталог, промоакции и т.д.).
+/*
 3. Создать функционал фотогалереи. Имеется статичный json-набор миниатюр, на основании которого строится сетка
 изображений со ссылками на полноразмерные картинки.*/
 
@@ -48,69 +48,26 @@ Menu.prototype.render = function () {
     return div;
 };
 
-function MenuItem(href, label, id, subItems) {
+function GalleryItem( id, src, srcBig,className) {
     Container.call(this, '', 'menu-item');
     this.id = id;
-    this.href = href;
-    this.label = label;
-    this.subItems = subItems;
+    this.src = src;
+    this.srcBig = srcBig;
+    this.className = className;
 }
 
-MenuItem.prototype = Object.create(Container.prototype);
+GalleryItem.prototype = Object.create(Container.prototype);
 
-MenuItem.prototype.render = function () {
-    var ul = document.createElement('ul');
-    var li = document.createElement('li');
-    var a = document.createElement('a');
+GalleryItem.prototype.render = function () {
+    var img = document.createElement('img');
 
-    ul.className = this.className;
-    ul.id = this.id;
-
-    a.href = this.href;
-    a.textContent = this.label;
-    ul.appendChild(li);
-    li.appendChild(a);
-    li.className = this.className;
+    img.className = this.className;
+    img.id = this.id;
+    img.src = this.src;
+    img.urlBig = this.urlBig;
 
 
-    this.subItems.forEach(function (subIt) {
-        if (subIt instanceof Container) {
-            li.appendChild(subIt.render());
-        }
-    });
-
-    return ul;
-};
-
-function MenuSubItem(href, label, id) {
-    Container.call(this, '', 'subMenu-item');
-    this.id = id;
-    this.href = href;
-    this.label = label;
-
-}
-
-MenuSubItem.prototype = Object.create(Container.prototype);
-
-MenuSubItem.prototype.render = function () {
-    var ul = document.createElement('ul');
-    var li = document.createElement('li');
-    var a = document.createElement('a');
-
-    a.href = this.href;
-    a.textContent = this.label;
-
-    ul.className = this.className;
-    ul.id = this.id;
-
-    ul.appendChild(li);
-    li.appendChild(a);
-    li.className = this.className;
-    if (this.id === undefined) {
-        console.log('нет id');
-        return document.createElement('i')
-    }
-    return ul;
+    return img;
 };
 
 function Button(id, className, type, value) {
