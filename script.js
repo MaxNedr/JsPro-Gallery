@@ -48,11 +48,11 @@ Menu.prototype.render = function () {
     return div;
 };
 
-function GalleryItem( id, src, srcBig,className) {
+function GalleryItem(id, src, href, className) {
     Container.call(this, '', 'menu-item');
     this.id = id;
     this.src = src;
-    this.srcBig = srcBig;
+    this.href = href;
     this.className = className;
 }
 
@@ -60,14 +60,17 @@ GalleryItem.prototype = Object.create(Container.prototype);
 
 GalleryItem.prototype.render = function () {
     var img = document.createElement('img');
+    var a = document.createElement('a');
 
     img.className = this.className;
     img.id = this.id;
     img.src = this.src;
-    img.urlBig = this.urlBig;
+    console.log(this.href);
+    a.href = this.href;
+    a.setAttribute('target', '_blank');
+    a.appendChild(img);
 
-
-    return img;
+    return a;
 };
 
 function Button(id, className, type, value) {

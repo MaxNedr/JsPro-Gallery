@@ -28,30 +28,17 @@
                         var items = JSON.parse(xhr.responseText);
                         items = items.map(function (item) {
                             this.item = item;
-                            return new GalleryItem(item.id, item.src, item.srcBig, item.className);
+                            return new GalleryItem(item.id, item.src, item.href, item.className);
                         });
 
                         var menu2 = new Menu('menu2', 'menu2', items);
                         document.body.appendChild(menu2.render());
-
-                        document.getElementById('1').addEventListener('mouseover', function (event) {
-                            function createG() {
-                                if (event.target) {
-                                    return new GalleryItem(item.id, item.srcBig, item.src, item.className);
-                                }
-                            }
-
-                            createG();
-                            var menu2 = new Menu('menu2', 'menu2', items);
-                            document.body.appendChild(menu2.render());
-                        })
                     }
+                    event.preventDefault();
                 };
             });
-            event.preventDefault();
+
         }
-
-
 
 
     </script>

@@ -4,31 +4,31 @@
       "id": 1,
       "className": "image",
       "src": "img/Layer_44_mini.png",
-      "srcBig": "img/Layer_44.png"
+      "href": "img/Layer_44.png"
     },
     {
       "id": 2,
       "className": "image",
       "src": "img/Layer_45_mini.png",
-      "srcBig": "img/Layer_45.png"
+      "href": "img/Layer_45.png"
     },
     {
       "id": 3,
       "className": "image",
       "src": "img/Layer_46_mini.png",
-      "srcBig": "img/Layer_46.png"
+      "href": "img/Layer_46.png"
     },
     {
       "id": 4,
       "className": "image",
       "src": "img/Layer_47_mini.png",
-      "srcBig": "img/Layer_47.png"
+      "href": "img/Layer_47.png"
     },
     {
       "id": 5,
       "className": "image",
       "src": "img/Layer_48_mini.png",
-      "srcBig": "img/Layer_48.png"
+      "href": "img/Layer_48.png"
     }
   ]
 }
